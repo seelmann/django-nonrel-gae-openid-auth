@@ -1,25 +1,31 @@
 {% extends 'base.html' %}
-{% block title %}It works!{% endblock %}
+{% block title %}Django-nonrel Google App Engine OpenID Auth Example{% endblock %}
 
 {% block content %}
-<h1>It works!</h1>
+<h1>Django-nonrel Google App Engine OpenID Auth Example</h1>
+
 <p>
-Your Django-nonrel installation is working fine.
-Now go and build something useful with it. :)
+This example demonstrates how to setup OpenID authentication for Django-nonrel on Goole App Engine.
+The source code of this little example is available at 
+<a href="http://github.com/seelmann/django-nonrel-gae-openid-auth">http://github.com/seelmann/django-nonrel-gae-openid-auth</a>
 </p>
 
 <p>
-Also, make sure you follow the
-<a href="http://www.allbuttonspressed.com/blog/django">Django-nonrel & webdev blog</a>,
-so you don't miss any new features and improvements.
+Click the Login link below, it opens the login form where you can enter your OpenID URL.
+Once authenticated your name and a Logout link will be displayed.
 </p>
 
 <p>
-If you're new to Django you should take a look at the
-<a href="http://docs.djangoproject.com/en/dev/">Django documentation</a>
-and the
-<a href="http://www.djangobook.com/">Django book</a>.
-You'll also find <a href="http://djangosnippets.org/">djangosnippets</a>
-very useful.
+<strong>Please note:</strong> When you login your OpenID URL, Name, Nickname, and Email address will be stored 
+in the the App Engine data store!
 </p>
+
+<p>
+{% if user.is_authenticated %}
+  Welcome {{ user.first_name }} {{ user.last_name }}, <a href="/accounts/logout/">Logout</a>
+{% else %}
+  <a href="/accounts/login/">Login</a></li>
+{% endif %}			                             
+</p>
+
 {% endblock %}

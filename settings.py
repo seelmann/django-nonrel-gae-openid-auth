@@ -12,9 +12,10 @@ SECRET_KEY = '=r-$b*8hglm+858&9t043hlm6-&6-3d3vfc4((7yd0dbrakhvi'
 
 INSTALLED_APPS = (
     'djangotoolbox',
-#    'django.contrib.auth',
     'django.contrib.contenttypes',
     'django.contrib.sessions',
+    'django.contrib.auth',
+    'django_openid_auth',
 )
 
 if has_djangoappengine:
@@ -36,3 +37,18 @@ try:
     INSTALLED_APPS += ('dbindexer',)
 except ImportError:
     pass
+
+# OpenID
+OPENID_CREATE_USERS = True
+OPENID_UPDATE_DETAILS_FROM_SREG = True
+LOGIN_URL = '/accounts/login/'
+LOGIN_REDIRECT_URL = '/'
+
+AUTHENTICATION_BACKENDS = (
+    'django_openid_auth.auth.OpenIDBackend',
+)
+
+GAE_SETTINGS_MODULES = (
+    'gae_settings',
+)
+
