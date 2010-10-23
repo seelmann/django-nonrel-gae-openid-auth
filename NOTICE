@@ -1,0 +1,28 @@
+Copyright 2010 Stefan Seelmann
+
+This product includes the following third-party components:
+
+ * django_openid_auth
+   Simplified BSD License (django_openid_auth/LICENSE.txt)
+   https://launchpad.net/django-openid-auth
+
+ * djangoappengine
+   ???
+   http://www.allbuttonspressed.com/projects/djangoappengine
+   http://bitbucket.org/wkornewald/djangoappengine/src
+
+ * djangotoolbox
+   ???
+   http://www.allbuttonspressed.com/projects/djangotoolbox
+   http://bitbucket.org/wkornewald/djangotoolbox/src
+
+ * zip-packages/django.zip
+   BSD License (zip-packages/django-LICENSE)
+   http://www.allbuttonspressed.com/projects/django-nonrel
+   http://bitbucket.org/wkornewald/django-nonrel/src
+
+ * zip-packages/openid.zip
+   Apache License 2.0 (zip-packages/openid-LICENSE)
+   http://pypi.python.org/pypi/python-openid
+   http://github.com/openid/python-openid
+
